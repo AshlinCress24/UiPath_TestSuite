@@ -1,11 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Read_Vendor_File" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="out_dt_vendorDetails" Type="OutArgument(sd:DataTable)" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap2010:WorkflowViewState.IdRef>Read_Vendor_File_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Read_Vendor_File" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Read_Vendor_File_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -95,38 +88,35 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Read_Vendor_File" sap:VirtualizedContainerService.HintSize="910,490.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Read_Vendor_File" sap:VirtualizedContainerService.HintSize="1303,604" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_vendorDetails" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log the start of the read vendor file process" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Started Read Vendor File Process&quot;]" />
-    <If Condition="[File.Exists(&quot;Data\Vendor List.xlsx&quot;)]" DisplayName="Read vendor details from excel and log status" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[File.Exists(&quot;Data\Vendor List.xlsx&quot;)]" DisplayName="Read vendor details from excel and log status" sap:VirtualizedContainerService.HintSize="418,581" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="452,757" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[out_dt_vendorDetails]" DisplayName="Read vendor details from Excel file" sap:VirtualizedContainerService.HintSize="418,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Vendor list" WorkbookPath="Data\Vendor List.xlsx" />
-          <If Condition="[out_dt_vendorDetails IsNot Nothing AndAlso out_dt_vendorDetails.RowCount&gt;0]" DisplayName="Log vendor details status" sap:VirtualizedContainerService.HintSize="418,577" sap2010:WorkflowViewState.IdRef="If_1">
+          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_vendorDetails]" DisplayName="Read vendor details from Excel file" sap:VirtualizedContainerService.HintSize="382,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Vendor list" WorkbookPath="Data\Vendor List.xlsx" />
+          <If Condition="[dt_vendorDetails IsNot Nothing AndAlso dt_vendorDetails.RowCount&gt;0]" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -137,7 +127,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log message indicating vendor details read" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Vendor Details read successfully&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Vendor Details read successfully&quot;]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -147,23 +137,22 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log message when no vendor details exist" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;No Vendor Details Exist&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;No Vendor Details Exist&quot;]" />
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="452,224" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log a message when the input file is missing" sap:VirtualizedContainerService.HintSize="418,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Input File does not exist&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Input File does not exist&quot;]" />
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log the end of the vendor file process" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Ended Read Vendor File Process&quot;]" />
   </Sequence>
 </Activity>

@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login_to_ACME" sap:VirtualizedContainerService.HintSize="1065,1182" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Login_to_ACME" sap:VirtualizedContainerService.HintSize="1125,490.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Default="[new System.Net.NetworkCredential(&quot;&quot;,&quot;Acme240520&quot;).SecurePassword]" Name="password" />
       <Variable x:TypeArguments="x:String" Default="Ashlin.Fernandes@novigosolutions.com" Name="userName" />
@@ -122,7 +122,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open ACME System 1 in Chrome and click 'Log Out'" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1159" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="0288a794-5cd6-47ab-87f9-f64196eea95c" Version="V2">
+    <ui:LogMessage DisplayName="Log message indicating login to ACME started" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Login to ACME started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open ACME System 1 in Chrome and click 'Log Out'" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="0288a794-5cd6-47ab-87f9-f64196eea95c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -174,6 +175,13 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" ContentHash="VisPZBo0IkChXkstrNM-tQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASJSURBVFhHvZdtbFNlFMePblYqvkYTRFyCLOrQhC9CjB80KCqaiCF80C+CRhIZClHJ3AsDt+6FjnbttIyXzRfI3NiYZIm46AcDm4XRN9a1XStu6waL2dgq2xhTTJZtj/9zy23vZltZafnwb/Pc3uf5/3ruec55LtEeZz90FRq/xWLPiwwgQipltYfHCRfWZg/lNXyMhQaac4LybYJ22ZOjfBbWZ4gyyXOEAcZJiwF+XHvM31jlubwx79fBzJw4Jc/NahnM3GkOisfZrYOZWuvw+ztODRRTCSJRJEV6NAjARJ/bxYamC2sAQFiEMCkuyXMBQDCXxGMAEAAIAKTa2wE/h8AfVwAUOcRL9f7tyQb42j2yPJUBCucC4MLrjb0fJQpgaHJm2crKzrbVDf4qHssAVc7LT0QFWJsgACHEQyllLkEfmgVtMYtdbUMnZACjbTg6wBvfhwHS9nur1Tq3EzvD+UpjrymSGWvFN7+bqeic416D25NS4tzMc1svXdtEm1sEVXgEfdKGjO8QMkC5LRAdYN3xMIBa77pGhdiWORax8khXIJI5a0mlV1CuRVAx7tW0H74OQOlfnRe07bSkpt5xzbwB7jN6LFSMrbLTJp6r7T4ZyZy17KBvStrbKDIPfOEpUADQ7paBDbnWwFMACOXAoVg5MAvA4LEpAFoimbMAMMP3MMBCvbtwDgABgIb/nr5NBqh2jSQPQFXWEQJYesAn1Hgsd+k6BPKpQgao8YwmGOCQb1oGUCsicI/RLegz5AZKsErn0skAdd7EA4QioATAvxa0G7Ufze1hU2ehDFCbaID0KACP8u5gANT9RV/GAXC/8YYBIj6CuADeVAAs2OuyS10LW2xVTfepSOasjGrfpASgxb2lTs1NASgrIZLIiwonKNsi1jT4f45kzko7EDZaaHDrbwrghaP+EMC7P/WfoE/PCso6K56t6xmMZM5K1SHb0copxypMzsBWGeCRfXEAPF8bBjjsG90ilVJuKngMXVcnH5trPiPECsqzcgmWttvFvyYXywCLTJ3zB3i5YRYAqcthnodF+OYCh8g/fek9vT2QUf/b2PLc1oFs4l5RgrnbzohnaruvAECaGysCNbEAXlO0YwZo/mNiK71zEhmO3zkfEGZVOULO4ywUGT5DsskHZjE2LV5VAqRxDvCjQR1YbPIW3FAEIgDQ28397bQDufAx2ipP4s7HB0xEhK+rNA6x8ZcBHQBICUBamGw/IyUxorRfBqj3zR+AmvsmVr3V1PfjgzqXuBu1PRX9fYnRM7Hphwvf9f8zpYJoLsCLR3uupO/rnHqyyidW1/mzZYAjnhjNKAYAAYAAQAAgABAACADE5lEACAAEAAJAqB0fdMYAwJEsdChNFsC3rpGMqAA4lK67BQB0Jx7jf4/lyOb1x/tKj50fW1phDzytt86WDjJAZZYhaWyIcM//qdL55+M66/D6VE5QJC+8JYDgqxkgUvDDAiTa7fjmMCVad0C0B+LaEXwdlF7NggN+V+PXJd5eTJcMyWvLnix89ECjUECS9vp3MjR7bXg6u/4FPqMYP5QOgtAAAAAASUVORK5CYII=" InformativeScreenshot="1733cfb077ae873a9b26aee087155197.jpg" Reference="2rH4cdBAwUK129tzQqdCJg/koIvCPuE4E6tuTMeFAw4jg" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" Url="https://acme-test.uipath.com/home" Version="V2" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log message indicating login to ACME ended." sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Login to ACME Ended&quot;]" />
   </Sequence>
 </Activity>

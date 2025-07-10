@@ -101,13 +101,14 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Search_Vendor" sap:VirtualizedContainerService.HintSize="1065,1659" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Search_Vendor" sap:VirtualizedContainerService.HintSize="910,490.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open ACME, navigate to vendors, search by tax ID" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,1636" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V2">
+    <ui:LogMessage DisplayName="Log message indicating searching for vendor started" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Searching for Vendor Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open ACME, navigate to vendors, search by tax ID" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -119,18 +120,18 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Vendors' button on ACME System 1" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Vendors' button on ACME System 1" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="acme-test.uipath.com" CVScreenId="d080d8ad-e180-4463-a965-86e07999ea2e" ContentHash="cVkVzjp0QEm569NZsLUhKw" CvElementArea="182, 658, 204, 49" CvTextArea="263, 674, 68, 16" CvTextArgument="Vendors" CvType="Button" DesignTimeRectangle="184, 660, 200, 46" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='                  Vendors' parentid='dashmenu' tag='BUTTON' /&gt;" Guid="8eb4427f-9483-45f6-952f-16b148abee56" InformativeScreenshot="8a0b1566ccc85073184569a7813440b9.png" Reference="2rH4cdBAwUK129tzQqdCJg/f68ENIsatkGAVENSgNEcnA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="d080d8ad-e180-4463-a965-86e07999ea2e" CvTextArea="423, 674, 116, 13" CvTextArgument="Search for Vendor" CvType="Text" DesignTimeRectangle="405, 668, 248, 26" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Search for Vendor' parentid='dashmenu' tag='A' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Search for Vendor' /&gt;" Guid="67c45d77-8265-4b32-bbc2-c7d6a8b104ac" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Search for Vendor' element" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Search for Vendor' element" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a89547c3-fb2b-458c-893f-cb202de16f4b" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="acme-test.uipath.com" CVScreenId="de91281b-304a-4a5e-8c8d-a41e7c159f08" ContentHash="Aur8YFbSIE2Ny-Mbr5Mi5g" CvTextArea="423, 674, 116, 13" CvTextArgument="Search for Vendor" CvType="Text" DesignTimeRectangle="405, 668, 248, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Search for Vendor' parentid='dashmenu' tag='A' /&gt;" Guid="d41213d4-3b06-475f-ac54-9e3ddcb7820f" InformativeScreenshot="d2df3c02270ce4f6510262cd3afa4046.png" Reference="2rH4cdBAwUK129tzQqdCJg/fYRYYBNNDka1b5WYGRm_WA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
@@ -147,7 +148,7 @@
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/vendors/search" CVScreenId="8e99d941-2948-4780-9b03-418ee3d05ebd" ContentHash="wRBiDQE1pUmdG6Uk5oH5nA" CvElementArea="183, 451, 487, 36" CvType="InputBox" DesignTimeRectangle="184, 452, 485, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b3b1082a-115f-498a-a4d8-e96305026c75" InformativeScreenshot="5a0045060a9443744e5b85171e16381f.png" IsResponsive="True" Reference="2rH4cdBAwUK129tzQqdCJg/NLviWV-SnEGCXYU8_HY_0A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="8e99d941-2948-4780-9b03-418ee3d05ebd" CvTextArea="182, 430, 94, 13" CvTextArgument="Vendor TaxID:" CvType="Text" DesignTimeRectangle="184, 427, 93, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Vendor TaxID:' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Vendor TaxID:' /&gt;" Guid="43015a8e-e524-4a0d-8b7d-1479e3ce474d" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -158,7 +159,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/vendors/search" CVScreenId="8e99d941-2948-4780-9b03-418ee3d05ebd" ContentHash="dHjIXazldEyqccDtyEOmwA" CvElementArea="182, 603, 73, 37" CvTextArea="195, 615, 46, 13" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="184, 605, 70, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' /&gt;" Guid="e7444a79-5cf1-431a-a7a7-467fd594e129" InformativeScreenshot="467f9b5a7b78c61b7ef9caeaf68cb0e7.png" Reference="2rH4cdBAwUK129tzQqdCJg/4pEL86y0u06g2ORM0weFTg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="8e99d941-2948-4780-9b03-418ee3d05ebd" CvElementArea="256, 603, 150, 37" CvTextArea="270, 615, 121, 16" CvTextArgument="Display All Vendors" CvType="Button" DesignTimeRectangle="258, 605, 146, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='buttonShowAll' tag='BUTTON' type='button' class='btn btn-secondary' aaname='Display All Vendors' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Display All Vendors' /&gt;" Guid="b97c695f-d3f1-4c5d-9891-e9de737d9081" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -188,6 +189,13 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" ContentHash="yTx2OF5L7Um1prW1mxbZiA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASJSURBVFhHvZdtbFNlFMePblYqvkYTRFyCLOrQhC9CjB80KCqaiCF80C+CRhIZClHJ3AsDt+6FjnbttIyXzRfI3NiYZIm46AcDm4XRN9a1XStu6waL2dgq2xhTTJZtj/9zy23vZltZafnwb/Pc3uf5/3ruec55LtEeZz90FRq/xWLPiwwgQipltYfHCRfWZg/lNXyMhQaac4LybYJ22ZOjfBbWZ4gyyXOEAcZJiwF+XHvM31jlubwx79fBzJw4Jc/NahnM3GkOisfZrYOZWuvw+ztODRRTCSJRJEV6NAjARJ/bxYamC2sAQFiEMCkuyXMBQDCXxGMAEAAIAKTa2wE/h8AfVwAUOcRL9f7tyQb42j2yPJUBCucC4MLrjb0fJQpgaHJm2crKzrbVDf4qHssAVc7LT0QFWJsgACHEQyllLkEfmgVtMYtdbUMnZACjbTg6wBvfhwHS9nur1Tq3EzvD+UpjrymSGWvFN7+bqeic416D25NS4tzMc1svXdtEm1sEVXgEfdKGjO8QMkC5LRAdYN3xMIBa77pGhdiWORax8khXIJI5a0mlV1CuRVAx7tW0H74OQOlfnRe07bSkpt5xzbwB7jN6LFSMrbLTJp6r7T4ZyZy17KBvStrbKDIPfOEpUADQ7paBDbnWwFMACOXAoVg5MAvA4LEpAFoimbMAMMP3MMBCvbtwDgABgIb/nr5NBqh2jSQPQFXWEQJYesAn1Hgsd+k6BPKpQgao8YwmGOCQb1oGUCsicI/RLegz5AZKsErn0skAdd7EA4QioATAvxa0G7Ufze1hU2ehDFCbaID0KACP8u5gANT9RV/GAXC/8YYBIj6CuADeVAAs2OuyS10LW2xVTfepSOasjGrfpASgxb2lTs1NASgrIZLIiwonKNsi1jT4f45kzko7EDZaaHDrbwrghaP+EMC7P/WfoE/PCso6K56t6xmMZM5K1SHb0copxypMzsBWGeCRfXEAPF8bBjjsG90ilVJuKngMXVcnH5trPiPECsqzcgmWttvFvyYXywCLTJ3zB3i5YRYAqcthnodF+OYCh8g/fek9vT2QUf/b2PLc1oFs4l5RgrnbzohnaruvAECaGysCNbEAXlO0YwZo/mNiK71zEhmO3zkfEGZVOULO4ywUGT5DsskHZjE2LV5VAqRxDvCjQR1YbPIW3FAEIgDQ28397bQDufAx2ipP4s7HB0xEhK+rNA6x8ZcBHQBICUBamGw/IyUxorRfBqj3zR+AmvsmVr3V1PfjgzqXuBu1PRX9fYnRM7Hphwvf9f8zpYJoLsCLR3uupO/rnHqyyidW1/mzZYAjnhjNKAYAAYAAQAAgABAACADE5lEACAAEAAJAqB0fdMYAwJEsdChNFsC3rpGMqAA4lK67BQB0Jx7jf4/lyOb1x/tKj50fW1phDzytt86WDjJAZZYhaWyIcM//qdL55+M66/D6VE5QJC+8JYDgqxkgUvDDAiTa7fjmMCVad0C0B+LaEXwdlF7NggN+V+PXJd5eTJcMyWvLnix89ECjUECS9vp3MjR7bXg6u/4FPqMYP5QOgtAAAAAASUVORK5CYII=" InformativeScreenshot="86a1a97e18901e0e9788a102906bcc8d.jpg" Reference="2rH4cdBAwUK129tzQqdCJg/53MWjkZVBUi2LxrVIRr3kQ" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" Url="https://acme-test.uipath.com/" Version="V2" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log message indicating searching for vendor ended" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Searching for Vendor Ended&quot;]" />
   </Sequence>
 </Activity>

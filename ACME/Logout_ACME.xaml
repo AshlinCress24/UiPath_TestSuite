@@ -1,0 +1,197 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout_ACME" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Logout_ACME_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Logout_ACME" sap:VirtualizedContainerService.HintSize="1119,889" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:UiElement" Name="browser" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Logs a message when ACME logout starts." sap:VirtualizedContainerService.HintSize="484,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;ACME Logout Started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome ACME System 1 - Dashboard(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,529" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[browser]" ScopeGuid="425dc3c5-21bf-443a-bac0-8dcf35d3fa71" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check Dashboard app state and click Log Out" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="425dc3c5-21bf-443a-bac0-8dcf35d3fa71" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,244" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the 'Log Out' button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="425dc3c5-21bf-443a-bac0-8dcf35d3fa71" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/home" CVScreenId="22e7529e-cf4a-4581-94c7-8674b01321fa" ContentHash="LgeeF5oPJ0eddPQHV974PQ" CvTextArea="1203, 199, 52, 16" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1189, 181, 80, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Log Out' parentid='bs-example-navbar-collapse-1' tag='A' /&gt;" Guid="61607b11-8743-4b49-b5ef-89e8e7228fc9" InformativeScreenshot="cf82e2a9fcdf192ac18481863bcecd5e.png" Reference="2rH4cdBAwUK129tzQqdCJg/Z8255rdbm0Gww4JWpvQFzg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log message when logout button is missing" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Logout Button doesnt appear&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/home" CVScreenId="22e7529e-cf4a-4581-94c7-8674b01321fa" ContentHash="V0ySZoTKF0CpY4EFU-vDuQ" CvTextArea="113, 274, 177, 31" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="114, 271, 1140, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" Guid="e1d755b3-ca81-4773-9b06-4f0dec0099eb" InformativeScreenshot="ad489ea97ab7db274d8160240ee0cb41.png" Reference="2rH4cdBAwUK129tzQqdCJg/opLOtvPcCEuLtuKykhoRAw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check if 'Login' element appears and log success/failure" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="425dc3c5-21bf-443a-bac0-8dcf35d3fa71" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log a message indicating successful logout" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Logged out succesfully&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log a message indicating logout failure" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Could not log out&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/login" CVScreenId="e5e16484-e8fd-4523-a2e6-f885abf81e1d" ContentHash="ZdUgaaoxB06QO64hT0NrQg" CvTextArea="113, 222, 88, 38" CvTextArgument="Login" CvType="Text" DesignTimeRectangle="114, 219, 1140, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" Guid="3467e80f-5f45-4041-8353-14b287cb050f" InformativeScreenshot="73a6135eeb3b0fe25f154e8070d63b43.png" Reference="2rH4cdBAwUK129tzQqdCJg/DqSaMJINxEaufnzWsFU_lA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:CloseTab Browser="[browser]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" ContentHash="iswM9EIACUq2PZDmkI3fNQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASJSURBVFhHvZdtbFNlFMePblYqvkYTRFyCLOrQhC9CjB80KCqaiCF80C+CRhIZClHJ3AsDt+6FjnbttIyXzRfI3NiYZIm46AcDm4XRN9a1XStu6waL2dgq2xhTTJZtj/9zy23vZltZafnwb/Pc3uf5/3ruec55LtEeZz90FRq/xWLPiwwgQipltYfHCRfWZg/lNXyMhQaac4LybYJ22ZOjfBbWZ4gyyXOEAcZJiwF+XHvM31jlubwx79fBzJw4Jc/NahnM3GkOisfZrYOZWuvw+ztODRRTCSJRJEV6NAjARJ/bxYamC2sAQFiEMCkuyXMBQDCXxGMAEAAIAKTa2wE/h8AfVwAUOcRL9f7tyQb42j2yPJUBCucC4MLrjb0fJQpgaHJm2crKzrbVDf4qHssAVc7LT0QFWJsgACHEQyllLkEfmgVtMYtdbUMnZACjbTg6wBvfhwHS9nur1Tq3EzvD+UpjrymSGWvFN7+bqeic416D25NS4tzMc1svXdtEm1sEVXgEfdKGjO8QMkC5LRAdYN3xMIBa77pGhdiWORax8khXIJI5a0mlV1CuRVAx7tW0H74OQOlfnRe07bSkpt5xzbwB7jN6LFSMrbLTJp6r7T4ZyZy17KBvStrbKDIPfOEpUADQ7paBDbnWwFMACOXAoVg5MAvA4LEpAFoimbMAMMP3MMBCvbtwDgABgIb/nr5NBqh2jSQPQFXWEQJYesAn1Hgsd+k6BPKpQgao8YwmGOCQb1oGUCsicI/RLegz5AZKsErn0skAdd7EA4QioATAvxa0G7Ufze1hU2ehDFCbaID0KACP8u5gANT9RV/GAXC/8YYBIj6CuADeVAAs2OuyS10LW2xVTfepSOasjGrfpASgxb2lTs1NASgrIZLIiwonKNsi1jT4f45kzko7EDZaaHDrbwrghaP+EMC7P/WfoE/PCso6K56t6xmMZM5K1SHb0copxypMzsBWGeCRfXEAPF8bBjjsG90ilVJuKngMXVcnH5trPiPECsqzcgmWttvFvyYXywCLTJ3zB3i5YRYAqcthnodF+OYCh8g/fek9vT2QUf/b2PLc1oFs4l5RgrnbzohnaruvAECaGysCNbEAXlO0YwZo/mNiK71zEhmO3zkfEGZVOULO4ywUGT5DsskHZjE2LV5VAqRxDvCjQR1YbPIW3FAEIgDQ28397bQDufAx2ipP4s7HB0xEhK+rNA6x8ZcBHQBICUBamGw/IyUxorRfBqj3zR+AmvsmVr3V1PfjgzqXuBu1PRX9fYnRM7Hphwvf9f8zpYJoLsCLR3uupO/rnHqyyidW1/mzZYAjnhjNKAYAAYAAQAAgABAACADE5lEACAAEAAJAqB0fdMYAwJEsdChNFsC3rpGMqAA4lK67BQB0Jx7jf4/lyOb1x/tKj50fW1phDzytt86WDjJAZZYhaWyIcM//qdL55+M66/D6VE5QJC+8JYDgqxkgUvDDAiTa7fjmMCVad0C0B+LaEXwdlF7NggN+V+PXJd5eTJcMyWvLnix89ECjUECS9vp3MjR7bXg6u/4FPqMYP5QOgtAAAAAASUVORK5CYII=" InformativeScreenshot="1733cfb077ae873a9b26aee087155197.jpg" Reference="2rH4cdBAwUK129tzQqdCJg/JKrmrz7vckCEuWWtwaEyKg" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" Url="https://acme-test.uipath.com/home" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log ACME logout completion" sap:VirtualizedContainerService.HintSize="484,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;ACME Logout Ended&quot;]" />
+  </Sequence>
+</Activity>
