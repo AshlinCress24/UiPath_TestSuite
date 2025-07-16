@@ -63,11 +63,10 @@ pipeline {
 	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	               	environments: '',
-			traceLevel: 'Verbose',
 			createProcess: true,
 	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
-					traceLevel: 'None',
-					entryPointPaths: 'Main.xaml'
+			traceLevel: 'Verbose',
+			entryPointPaths: 'Main.xaml'
 	
 
 	        )
