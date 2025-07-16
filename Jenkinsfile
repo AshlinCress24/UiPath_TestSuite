@@ -7,7 +7,7 @@ pipeline {
 	        MAJOR = '1'
 	        MINOR = '0'
 	        //Orchestrator Services
-	        UIPATH_ORCH_URL = "https://cloud.uipath.com/noviggptduln/DefaultTenant"
+	        UIPATH_ORCH_URL = "https://cloud.uipath.com/noviggptduln/DefaultTenant/"
 	        UIPATH_ORCH_LOGICAL_NAME = "noviggptduln"
 	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
 	        UIPATH_ORCH_FOLDER_NAME = "Shared"
@@ -63,6 +63,7 @@ pipeline {
 	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	               	environments: '',
+			traceLevel: 'Verbose',
 			createProcess: true,
 	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
 					traceLevel: 'None',
