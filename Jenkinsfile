@@ -45,30 +45,24 @@ pipeline {
 	        }
 	
 
-	         // Deploy Stages
-	         stage('Deploy to UAT') {
-   		 steps {
-       		 script {
-           		withCredentials([string(credentialsId: 'APIUserKey', variable: 'UIPATH_APIKEY')]) {
-         	       	UiPathDeploy (
-                    	packagePath: "Output\\${env.BUILD_NUMBER}",
-                    	orchestratorAddress: "${env.UIPATH_ORCH_URL}",
-                    	orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
-                    	folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
-                    	environments: '',
-                    	createProcess: true,
-                    	credentials: UIPATH_APIKEY,
-                    	traceLevel: 'Verbose',
-                    	entryPointPaths: 'Main.xaml'
-                )
-            }
+	        stage('Deploy to UAT') {
+    steps {
+        script {
+            UiPathDeploy (
+                packagePath: "Output\\${env.BUILD_NUMBER}",
+                orchestratorAddress: "${env.UIPATH_ORCH_URL}",
+                orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
+                folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
+                environments: '',
+                createProcess: true,
+                credentials: selectOrchestratorApiKey('APIUserKey'),
+                traceLevel: 'Verbose',
+                entryPointPaths: 'Main.xaml'
+            )
         }
     }
 }
 
-	
-
-	
 
 	         // Deploy to Production Step
 	        stage('Deploy to Production') {
