@@ -56,7 +56,7 @@ pipeline {
                     folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
                     environments: '',
                     createProcess: true,
-                    credentialsId: 'APIUserKey',
+                    credentials: 'APIUserKey',
                     traceLevel: 'Verbose',
                     entryPointPaths: 'Main.xaml'
                 )
