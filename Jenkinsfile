@@ -2,18 +2,6 @@ pipeline {
 	    agent any
 	
 
-	        // Environment Variables
-	        environment {
-	        MAJOR = '1'
-	        MINOR = '0'
-	        //Orchestrator Services
-	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
-	        UIPATH_ORCH_LOGICAL_NAME = "noviggptduln"
-	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
-	        UIPATH_ORCH_FOLDER_NAME = "Shared"
-	    }
-	
-
 	    stages {
 	
 
@@ -41,7 +29,7 @@ pipeline {
 	                      projectJsonPath: "project.json",
 	                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
 	                      useOrchestrator: false,
-						  traceLevel: 'None'
+			      traceLevel: 'None'
 	        )
 	            }
 	        }
@@ -54,24 +42,26 @@ pipeline {
 	
 
 	         // Deploy Stages
-	        stage('Deploy to UAT') {
-	            steps {
-	                echo "Deploying ${BRANCH_NAME} to UAT "
-	                UiPathDeploy (
-	                packagePath: "Output\\${env.BUILD_NUMBER}",
-	                orchestratorAddress: "${UIPATH_ORCH_URL}",
-	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
-	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
-	               	environments: '',
-			createProcess: true,
-	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
-			traceLevel: 'Verbose',
-			entryPointPaths: 'Main.xaml'
-	
-
-	        )
-	            }
-	        }
+	         stage('Deploy to UAT') {
+            steps {
+                echo "Deploying ${BRANCH_NAME} to UAT"
+		echo "Orchestrator URL: ${env.UIPATH_ORCH_URL}"
+		echo "Logical Name: ${env.UIPATH_ORCH_LOGICAL_NAME}"
+		echo "Tenant: ${env.UIPATH_ORCH_TENANT_NAME}"
+		echo "Folder: ${env.UIPATH_ORCH_FOLDER_NAME}"
+                UiPathDeploy (
+                    packagePath: "Output\\${env.BUILD_NUMBER}",
+                    orchestratorAddress: "${env.UIPATH_ORCH_URL}",
+                    orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
+                    folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
+                    environments: '',
+                    createProcess: true,
+                    credentials: Token(accountName: "${env.UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
+                    traceLevel: 'Verbose',
+                    entryPointPaths: 'Main.xaml'
+                )
+            }
+        }
 	
 
 	
