@@ -1,10 +1,7 @@
 pipeline {
 	    agent any
 
-	   environment {
-                   UIPATH_CRED = credentials('APIUserKey') // resolves to Secret Text
-           }
-	
+	  
 
 	    stages {
 	
@@ -45,23 +42,25 @@ pipeline {
 	        }
 	
 
-	        stage('Deploy to UAT') {
-    steps {
-        script {
-            UiPathDeploy (
-                packagePath: "Output\\${env.BUILD_NUMBER}",
-                orchestratorAddress: "${env.UIPATH_ORCH_URL}",
-                orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
-                folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
-                environments: '',
-                createProcess: true,
-                credentials: selectOrchestratorApiKey('APIUserKey'),
-                traceLevel: 'Verbose',
-                entryPointPaths: 'Main.xaml'
-            )
+	      stages {
+        stage('Deploy to UAT') {
+            steps {
+                uipathDeploy (
+                    packagePath: "Output\\${env.BUILD_NUMBER}",
+                    orchestratorAddress: "${env.UIPATH_ORCH_URL}",
+                    orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
+                    folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
+                    entryPointPaths: 'Main.xaml',
+                    createProcess: true,
+                    traceLevel: 'Verbose',
+                    credentials: [
+                        $class: 'SelectOrchestratorApiKey',
+                        credentialsId: 'APIUserKey'
+                    ]
+                )
+            }
         }
     }
-}
 
 
 	         // Deploy to Production Step
