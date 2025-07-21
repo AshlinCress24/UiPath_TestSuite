@@ -1,5 +1,9 @@
 pipeline {
 	    agent any
+
+	   environment {
+                   UIPATH_CRED = credentials('APIUserKey') // resolves to Secret Text
+           }
 	
 
 	    stages {
@@ -56,7 +60,7 @@ pipeline {
                     folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
                     environments: '',
                     createProcess: true,
-                    credentials: credentials('APIUserKey'),
+                    credentials: "${env.UIPATH_CRED}",
                     traceLevel: 'Verbose',
                     entryPointPaths: 'Main.xaml'
                 )
