@@ -47,26 +47,25 @@ pipeline {
 
 	         // Deploy Stages
 	         stage('Deploy to UAT') {
-            steps {
-                echo "Deploying ${BRANCH_NAME} to UAT"
-		echo "Orchestrator URL: ${env.UIPATH_ORCH_URL}"
-		echo "Logical Name: ${env.UIPATH_ORCH_LOGICAL_NAME}"
-		echo "Tenant: ${env.UIPATH_ORCH_TENANT_NAME}"
-		echo "Folder: ${env.UIPATH_ORCH_FOLDER_NAME}"
-		withCredentials([string(credentialsId: 'APIUserKey', variable: 'UIPATH_APIKEY')])
-                UiPathDeploy (
-                    packagePath: "Output\\${env.BUILD_NUMBER}",
-                    orchestratorAddress: "${env.UIPATH_ORCH_URL}",
-                    orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
-                    folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
-                    environments: '',
-                    createProcess: true,
-                    credentials: UIPATH_APIKEY,
-                    traceLevel: 'Verbose',
-                    entryPointPaths: 'Main.xaml'
+   		 steps {
+       		 script {
+           		withCredentials([string(credentialsId: 'APIUserKey', variable: 'UIPATH_APIKEY')]) {
+         	       	UiPathDeploy (
+                    	packagePath: "Output\\${env.BUILD_NUMBER}",
+                    	orchestratorAddress: "${env.UIPATH_ORCH_URL}",
+                    	orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
+                    	folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
+                    	environments: '',
+                    	createProcess: true,
+                    	credentials: UIPATH_APIKEY,
+                    	traceLevel: 'Verbose',
+                    	entryPointPaths: 'Main.xaml'
                 )
             }
         }
+    }
+}
+
 	
 
 	
