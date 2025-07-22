@@ -7,7 +7,7 @@ pipeline {
 	        MAJOR = '1'
 	        MINOR = '0'
 	        //Orchestrator Services
-	        UIPATH_ORCH_URL = "https://cloud.uipath.com"
+	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "noviggptduln"
 	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
 	        UIPATH_ORCH_FOLDER_NAME = "Shared"
@@ -41,7 +41,7 @@ pipeline {
 	                      projectJsonPath: "project.json",
 	                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
 	                      useOrchestrator: false,
-						  traceLevel: 'None'
+			      traceLevel: 'Verbose's
 	        )
 	            }
 	        }
@@ -69,11 +69,8 @@ pipeline {
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 			environments : "",
 			createProcess: true,
-	                credentials: ClientCredentials(
-    					clientId: credentials('UiPathClientId'),
-    					clientSecret: credentials('UiPathClientSecret'),
-    					accountLogicalName: "${UIPATH_ORCH_LOGICAL_NAME}"
-			),
+	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
+                        credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
 			traceLevel: 'Verbose',
 			entryPointPaths: 'Main.xaml'
 	
