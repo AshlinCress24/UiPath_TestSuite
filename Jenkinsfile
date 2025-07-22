@@ -1,7 +1,18 @@
 pipeline {
 	    agent any
+	
 
-	  
+	        // Environment Variables
+	        environment {
+	        MAJOR = '1'
+	        MINOR = '0'
+	        //Orchestrator Services
+	        UIPATH_ORCH_URL = "https://cloud.uipath.com"
+	        UIPATH_ORCH_LOGICAL_NAME = "noviggptduln"
+	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
+	        UIPATH_ORCH_FOLDER_NAME = "Shared"
+	    }
+	
 
 	    stages {
 	
@@ -30,7 +41,7 @@ pipeline {
 	                      projectJsonPath: "project.json",
 	                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
 	                      useOrchestrator: false,
-			      traceLevel: 'None'
+						  traceLevel: 'None'
 	        )
 	            }
 	        }
@@ -42,26 +53,36 @@ pipeline {
 	        }
 	
 
-	      stages {
-        stage('Deploy to UAT') {
-            steps {
-                uipathDeploy (
-                    packagePath: "Output\\${env.BUILD_NUMBER}",
-                    orchestratorAddress: "${env.UIPATH_ORCH_URL}",
-                    orchestratorTenant: "${env.UIPATH_ORCH_TENANT_NAME}",
-                    folderName: "${env.UIPATH_ORCH_FOLDER_NAME}",
-                    entryPointPaths: 'Main.xaml',
-                    createProcess: true,
-                    traceLevel: 'Verbose',
-                    credentials: [
-                        $class: 'SelectOrchestratorApiKey',
-                        credentialsId: 'APIUserKey'
-                    ]
-                )
-            }
-        }
-    }
+	         // Deploy Stages
+	        stage('Deploy to UAT') {
+	            steps {
+	                echo "Deploying ${BRANCH_NAME} to UAT "
+			echo "Build Number: ${env.BUILD_NUMBER}"
+    			echo "Orch URL: ${UIPATH_ORCH_URL}"
+    			echo "Orch Tenant name: ${UIPATH_ORCH_TENANT_NAME}"
+    			echo "Folder name: ${UIPATH_ORCH_FOLDER_NAME}"
+    			echo "Using Credentials ID: APIUserKey"
+	                UiPathDeploy (
+	                packagePath: "Output\\${env.BUILD_NUMBER}",
+	                orchestratorAddress: "${UIPATH_ORCH_URL}",
+	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
+	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
+			createProcess: true,
+	                credentials: ClientCredentials(
+    					clientId: credentials('UiPathClientId'),
+    					clientSecret: credentials('UiPathClientSecret'),
+    					accountLogicalName: "${UIPATH_ORCH_LOGICAL_NAME}"
+			),
+			traceLevel: 'Verbose',
+			entryPointPaths: 'Main.xaml'
+	
 
+	        )
+	            }
+	        }
+	
+
+	
 
 	         // Deploy to Production Step
 	        stage('Deploy to Production') {
