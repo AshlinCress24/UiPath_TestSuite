@@ -70,7 +70,7 @@ pipeline {
 			environments: '',
 			createProcess: true,
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-                        credentialsId: 'APIUserKey',
+                        credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
 			traceLevel: 'Verbose',
 			entryPointPaths: 'Main.xaml'
 	
