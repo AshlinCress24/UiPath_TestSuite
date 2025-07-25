@@ -41,8 +41,7 @@ pipeline {
 	                      projectJsonPath: "project.json",
 	                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
 	                      useOrchestrator: false,
-			      traceLevel: 'None',
-			      cliPath: "C:\\UiPathCLI"
+			      traceLevel: 'None'
 
 	        )
 	            }
@@ -74,9 +73,7 @@ pipeline {
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
                         credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),
 			traceLevel: 'Verbose',
-			entryPointPaths: 'Main.xaml',
-			cliPath: "C:\\UiPathCLI"
-	
+			entryPointPaths: 'Main.xaml'
 
 	        )
 	            }
